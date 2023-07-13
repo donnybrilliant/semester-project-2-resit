@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elementarium</title>
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+    <script type="module" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
+    <script src="./src/js/index.js" type="module"></script>
+</head>
+
+<body>
+    <header class="sticky-top">
+        <nav class="navbar bg-white p-3">
+            <div class="container-fluid">
+                <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar"
+                    aria-expanded="true" aria-controls="sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+                <a class="navbar-brand" href="./index.html"><i class="bi bi-box-fill me-2"></i>Elementarium</a>
+                <div id="profile" class="d-flex">
+                    <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="d-flex" id="wrapper">
+        <div id="sidebar" class="collapse show">
+            <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 390px">
+                <div class="p-3 link-body-emphasis text-decoration-none border-bottom">
+                    <form id="searchForm">
+                        <div class="">
+                            <input id="search" class="form-control" name="search" type="search" placeholder="Search"
+                                aria-label="Search">
+                        </div>
+                        <!--    <div class="d-flex">
+                            <select id="sidebarCategories" name="category" class="form-select me-2 categories"
+                                aria-label="Category">
+                                <option value="">All Categories</option>
+                            </select>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-filter-right"></i>
+                                </button>
+                                <ul id="sort" class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item active" href="#" id="new">New to old</a></li>
+                                    <li><a class="dropdown-item" href="#" id="old">Old to new</a></li>
+                                    <li><a class="dropdown-item" href="#" id="asc">A - Z</a></li>
+                                    <li><a class="dropdown-item" href="#" id="desc">Z - A</a></li>
+
+                                </ul>
+                            </div>
+                        </div> -->
+                    </form>
+                </div>
+                <div id="postList" class="list-group list-group-flush border-bottom scrollarea"></div>
+            </div>
+        </div>
+        <main class="scrollarea p-3">
+
+            <h1>Welcome to Elementarium</h1>
+
+        </main>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Elementarium
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="form-floating my-3">
+                            <input type="text" name="username" class="form-control" id="loginUsername"
+                                placeholder="Username" required title="Must be a valid username.">
+                            <label for="loginUsername">Username</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" name="password" class="form-control" id="loginPassword"
+                                placeholder="Password" minlength="8" required title="Must be at least 8 characters.">
+                            <label for="loginPassword">Password</label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+                    </form>
+                    <div id="loginResponse" class="mt-3">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="newPostModalLabel">Create new
+                        post
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newPostForm">
+                        <div class="mb-3">
+                            <input type="text" name="title" class="form-control" id="newPostTitle"
+                                placeholder="Title of your post" required maxlength="280">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="excerpt" class="form-control" id="newPostExcerpt"
+                                placeholder="Post Excerpt" maxlength="280">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="content" placeholder="Content" id="newPostTextArea"
+                                rows="3" title="Content of your post" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <select class="form-select categories" name="categories" aria-label="Category"
+                                title="Post category" id="newPostCategories">
+                                <option value="">Category</option>
+                            </select>
+                        </div>
+
+
+                        <div class="mb-3"> <label for="newMedia">Upload a featured image:</label>
+                            <input type="file" id="newMedia" name="file" accept="image/*">
+                        </div>
+
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="form-check">
+                                <input class="form-check-input" name="status" type="checkbox" value="publish"
+                                    id="newPostStatus" checked>
+                                <label class="form-check-label" for="newPostStatus">
+                                    Publish
+                                </label>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-secondary m-2"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary m-2">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="createResponse"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="updatePostModal" tabindex="-1" aria-labelledby="updatePostModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="updatePostModalLabel">Update
+                        post
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="updatePostForm">
+                        <div class="mb-3">
+                            <input type="text" name="title" class="form-control" id="updatePostTitle"
+                                placeholder="Title of your post" required maxlength="280">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="excerpt" class="form-control" id="updatePostExcerpt"
+                                placeholder="Post Excerpt" maxlength="280">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="content" placeholder="Content" id="updatePostTextArea"
+                                rows="3" title="Content of your post" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select categories" name="categories" aria-label="Category"
+                                title="Post category" id="updatePostCategories">
+                                <option value="">Category</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3"> <label for="updateMedia">Upload a new featured image:</label>
+                            <input type="file" id="updateMedia" name="file" accept="image/*">
+                        </div>
+
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="form-check">
+                                <input class="form-check-input" name="status" type="checkbox" value="publish"
+                                    id="updatePostStatus" checked>
+                                <label class="form-check-label" for="updatePostStatus">
+                                    Publish
+                                </label>
+                            </div>
+
+
+
+                            <div class="d-flex justify-content-end">
+                                <button id="deleteButton" type="button" class="btn btn-danger m-2"
+                                    data-bs-target="#deletePostModal" data-bs-toggle="modal">Delete</button>
+                                <button type="button" class="btn btn-secondary m-2"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary m-2">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="updateResponse"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="deletePostModal" aria-hidden="true" aria-labelledby="deletePostModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="deletePostModalLabel">Delete confirmation</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirmDeleteButton" type="button" class="btn btn-danger m-2">Delete</button>
+                    <button class="btn btn-primary" data-bs-target="#updatePostModal"
+                        data-bs-toggle="modal">Back</button>
+                    <div class="container-fluid" id="deleteResponse"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
