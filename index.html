@@ -5,6 +5,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Elementarium is a comprehensive resource for everything related to HTML elements, DOM manipulation, and rendering in JavaScript.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Elements, DOM, Rendering, Modules, Layout, Wiki">
+    <meta name="author" content="Daniel Vier">
+    <link rel="icon" href="./assets/favicon.svg">
     <title>Elementarium</title>
     <link rel="stylesheet" href="./dist/css/styles.css" />
     <script type="module" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
@@ -12,11 +17,11 @@
 </head>
 
 <body>
-    <header class="sticky-top">
+    <header class="fixed-top">
         <nav class="navbar bg-white p-3">
             <div class="container-fluid">
-                <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar"
-                    aria-expanded="true" aria-controls="sidebar">
+                <button id="menuButton" class="btn btn-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
                     <i class="bi bi-list"></i>
                 </button>
                 <a class="navbar-brand" href="./index.html"><i class="bi bi-box-fill me-2"></i>Elementarium</a>
@@ -26,16 +31,16 @@
             </div>
         </nav>
     </header>
-    <div class="d-flex" id="wrapper">
-        <div id="sidebar" class="collapse show">
-            <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 390px">
-                <div class="p-3 link-body-emphasis text-decoration-none border-bottom">
-                    <form id="searchForm">
-                        <div class="">
-                            <input id="search" class="form-control" name="search" type="search" placeholder="Search"
-                                aria-label="Search">
-                        </div>
-                        <!--    <div class="d-flex">
+    <div class="d-flex flex-nowrap" id="wrapper">
+
+        <div id="sidebar" class="collapse collapse-horizontal col-12 col-md-5 col-xxl-4">
+            <div class="p-3 border-bottom">
+                <form id="searchForm" onSubmit="return false;">
+                    <div class="">
+                        <input id="search" class="form-control" name="search" type="search" placeholder="Search"
+                            aria-label="Search">
+                    </div>
+                    <!--    <div class="d-flex">
                             <select id="sidebarCategories" name="category" class="form-select me-2 categories"
                                 aria-label="Category">
                                 <option value="">All Categories</option>
@@ -54,15 +59,65 @@
                                 </ul>
                             </div>
                         </div> -->
-                    </form>
-                </div>
-                <div id="postList" class="list-group list-group-flush border-bottom scrollarea"></div>
+                </form>
             </div>
+            <div id="postList" class="list-group list-group-flush border-bottom scrollarea"></div>
         </div>
-        <main class="scrollarea p-3">
 
-            <h1>Welcome to Elementarium</h1>
+        <main class="p-3 scrollarea">
+            <div class="text-center">
+                <h1>Welcome to Elementarium</h1>
+                <div class="container-fluid my-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor"
+                        class="bi bi-box-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.004-.001.274-.11a.75.75 0 0 1 .558 0l.274.11.004.001 6.971 2.789Zm-1.374.527L8 5.962 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339Z" />
+                    </svg>
+                </div>
+                <button class="btn btn-primary d-md-none mb-5" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
+                    Open Menu to see posts
+                </button>
 
+            </div>
+            <div class="container">
+                <p>Elementarium is a comprehensive resource for everything related to HTML elements, DOM manipulation,
+                    and
+                    rendering in JavaScript. Whether you're a beginner or an experienced front-end developer,
+                    Elementarium
+                    is
+                    here to provide you with valuable information and examples to enhance your coding skills.</p>
+
+                <h2>Unlock the Power of Elements</h2>
+
+                <p>From understanding the fundamentals of HTML elements to advanced techniques for rendering and
+                    manipulating
+                    the DOM, Elementarium covers a wide range of topics. Explore our collection of in-depth posts,
+                    tutorials,
+                    and code examples to master the art of front-end development.</p>
+
+                <h3>Discover and Learn</h3>
+
+                Open the sidebar menu to easily navigate through Elementarium's extensive collection of posts. Use the
+                search functionality to find specific topics or browse through the list of posts to discover new
+                insights
+                and techniques. We're constantly updating our content to provide you with the latest information and
+                best
+                practices in front-end development.
+
+                <h4>Join the Elementarium Community</h4>
+
+                <p>Elementarium is more than just a resource - it's a community of front-end developers passionate about
+                    creating exceptional web experiences. Connect with like-minded individuals, share your knowledge,
+                    and
+                    stay
+                    up-to-date with the latest trends and advancements in the world of front-end development.</p>
+
+                <p>Get ready to dive into the world of HTML elements, DOM manipulation, and rendering. Let Elementarium
+                    be
+                    your
+                    guide to unlock the full potential of front-end development.</p>
+            </div>
         </main>
     </div>
 
@@ -88,7 +143,7 @@
                         </div>
                         <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
                     </form>
-                    <div id="loginResponse" class="mt-3">
+                    <div id="loginResponse">
                     </div>
                 </div>
 
@@ -96,7 +151,7 @@
         </div>
     </div>
     <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="newPostModalLabel">Create new
@@ -104,7 +159,7 @@
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body overflow-x-hidden">
                     <form id="newPostForm">
                         <div class="mb-3">
                             <input type="text" name="title" class="form-control" id="newPostTitle"
@@ -112,11 +167,17 @@
                         </div>
                         <div class="mb-3">
                             <input type="text" name="excerpt" class="form-control" id="newPostExcerpt"
-                                placeholder="Post Excerpt" maxlength="280">
+                                placeholder="Post Excerpt">
                         </div>
                         <div class="mb-3">
+                            <small>In this form you can write semantic HTML elements. You can use element
+                                like p, small
+                                or code.
+                                Images can be added from anywhere on the web by using the img tag and an url. You can
+                                also use the image upload feature below.
+                            </small>
                             <textarea class="form-control" name="content" placeholder="Content" id="newPostTextArea"
-                                rows="3" title="Content of your post" required></textarea>
+                                rows="10" title="Content of your post" required></textarea>
                         </div>
 
                         <div class="mb-3">
@@ -127,29 +188,31 @@
                         </div>
 
 
-                        <div class="mb-3"> <label for="newMedia">Upload a featured image:</label>
-                            <input type="file" id="newMedia" name="file" accept="image/*">
+                        <div class="my-4 ms-1">
+                            <label for="newMedia">Upload a featured image:</label>
+                            <input class="mt-3 ms-3" type="file" id="newMedia" name="file" accept="image/*">
                         </div>
 
 
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="form-check">
-                                <input class="form-check-input" name="status" type="checkbox" value="publish"
-                                    id="newPostStatus" checked>
-                                <label class="form-check-label" for="newPostStatus">
-                                    Publish
-                                </label>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <button type="button" class="btn btn-secondary m-2"
-                                    data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary m-2">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div id="createResponse"></div>
+
+
+                        <div id="createResponse"></div>
                 </div>
+                <div class="modal-footer d-flex justify-content-between">
+                    <div class="form-check">
+                        <input class="form-check-input" name="status" type="checkbox" value="publish" id="newPostStatus"
+                            checked>
+                        <label class="form-check-label" for="newPostStatus">
+                            Publish
+                        </label>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-secondary m-2" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary m-2">Submit</button>
 
+                    </div>
+                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -157,7 +220,7 @@
 
     <div class="modal fade" id="updatePostModal" tabindex="-1" aria-labelledby="updatePostModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="updatePostModalLabel">Update
@@ -173,11 +236,17 @@
                         </div>
                         <div class="mb-3">
                             <input type="text" name="excerpt" class="form-control" id="updatePostExcerpt"
-                                placeholder="Post Excerpt" maxlength="280">
+                                placeholder="Post Excerpt">
                         </div>
                         <div class="mb-3">
+                            <small>In this form you can write semantic HTML elements. You can use element
+                                like p, small
+                                or code.
+                                Images can be added from anywhere on the web by using the img tag and an url. You can
+                                also use the image upload feature below.
+                            </small>
                             <textarea class="form-control" name="content" placeholder="Content" id="updatePostTextArea"
-                                rows="3" title="Content of your post" required></textarea>
+                                rows="10" title="Content of your post" required></textarea>
                         </div>
                         <div class="mb-3">
                             <select class="form-select categories" name="categories" aria-label="Category"
@@ -186,34 +255,33 @@
                             </select>
                         </div>
 
-                        <div class="mb-3"> <label for="updateMedia">Upload a new featured image:</label>
-                            <input type="file" id="updateMedia" name="file" accept="image/*">
+                        <div class="my-4 ms-1"> <label for="updateMedia">Upload a new featured image:</label>
+                            <input class="mt-3 ms-3" type="file" id="updateMedia" name="file" accept="image/*">
                         </div>
 
 
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="form-check">
-                                <input class="form-check-input" name="status" type="checkbox" value="publish"
-                                    id="updatePostStatus" checked>
-                                <label class="form-check-label" for="updatePostStatus">
-                                    Publish
-                                </label>
-                            </div>
 
-
-
-                            <div class="d-flex justify-content-end">
-                                <button id="deleteButton" type="button" class="btn btn-danger m-2"
-                                    data-bs-target="#deletePostModal" data-bs-toggle="modal">Delete</button>
-                                <button type="button" class="btn btn-secondary m-2"
-                                    data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary m-2">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div id="updateResponse"></div>
+                        <div id="updateResponse"></div>
                 </div>
+                <div class="modal-footer d-flex justify-content-between">
+                    <div class="form-check">
+                        <input class="form-check-input" name="status" type="checkbox" value="publish"
+                            id="updatePostStatus" checked>
+                        <label class="form-check-label" for="updatePostStatus">
+                            Publish
+                        </label>
+                    </div>
 
+
+
+                    <div class="d-flex justify-content-end">
+                        <button id="deleteButton" type="button" class="btn btn-danger m-2"
+                            data-bs-target="#deletePostModal" data-bs-toggle="modal">Delete</button>
+                        <button type="button" class="btn btn-secondary m-2" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary m-2">Submit</button>
+                    </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -235,7 +303,7 @@
                     <button id="confirmDeleteButton" type="button" class="btn btn-danger m-2">Delete</button>
                     <button class="btn btn-primary" data-bs-target="#updatePostModal"
                         data-bs-toggle="modal">Back</button>
-                    <div class="container-fluid" id="deleteResponse"></div>
+
                 </div>
 
             </div>
