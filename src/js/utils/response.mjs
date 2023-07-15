@@ -1,6 +1,6 @@
 export function responseMessage(data, color) {
   const container = document.createElement("div");
-  container.classList.add("alert", "alert-" + color);
+  container.classList.add("mt-3", "alert", "alert-" + color);
   container.innerText = data;
   return container;
 }

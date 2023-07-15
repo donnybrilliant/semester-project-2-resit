@@ -1,4 +1,5 @@
 import { dateConverter } from "../utils/date.mjs";
+import { renderResponseMessage } from "../utils/response.mjs";
 
 export function sidebarItemTemplate(data) {
   const container = document.createElement("a");
@@ -41,7 +42,8 @@ export function sidebarItemTemplate(data) {
 
 export function renderSidebarItems(dataList, parent) {
   parent.innerHTML = "";
-  parent.classList.add();
+  if (dataList.length === 0)
+    renderResponseMessage("No posts found.", parent, "warning");
   dataList.forEach((element) => {
     const post = sidebarItemTemplate(element);
     parent.append(post);

@@ -7,7 +7,9 @@ import { loggedIn } from "./utils/loggedIn.mjs";
 import { setUpdatePostListener } from "./listeners/updatePost.mjs";
 import { setDeletePostListener } from "./listeners/deletePost.mjs";
 import { renderCategories } from "./render/categories.mjs";
+import { setUpMenu } from "./utils/menu.mjs";
 
+setUpMenu();
 renderSidebar();
 renderCategories();
 

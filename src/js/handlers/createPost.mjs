@@ -1,6 +1,7 @@
 import { create } from "../api/posts/create.mjs";
 import { renderResponseMessage } from "../utils/response.mjs";
 import { create as createMedia } from "../api/media/create.mjs";
+import { loader } from "../utils/loader.mjs";
 
 export async function createPostHandler(event) {
   event.preventDefault();
@@ -24,9 +25,10 @@ export async function createPostHandler(event) {
   }
 
   try {
+    container.innerHTML = loader();
     const result = await create(post);
     renderResponseMessage("Post created successfully.", container, "success");
-    //setTimeout(() => location.assign(`?id=${result.id}`), 1000);
+    setTimeout(() => location.assign(`?id=${result.id}`), 1000);
   } catch (error) {
     console.log(error);
     renderResponseMessage(error.message, container, "danger");

@@ -22,7 +22,7 @@ export async function renderNav() {
         </button>
            
             <ul class="dropdown-menu text-small" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0.5px, 3rem, 0px);">
-              <li><a id="menu-username" class="dropdown-item" href="#">Username</a></li>
+              <li><a id="menu-username" class="dropdown-item disabled text-black" href="#">Username</a></li>
               <li><hr class="dropdown-divider"></li>
               <li id="logOutButton"><a class="dropdown-item" href="#">Log out</a></li>
             </ul>

@@ -1,7 +1,7 @@
 import { URL } from "../constants.mjs";
 
 export async function readAll() {
-  const readPostsURL = URL + "/wp/v2/posts?_embed";
+  const readPostsURL = URL + "/wp/v2/posts?_embed&per_page=100";
   const response = await fetch(readPostsURL);
   const result = await response.json();
 
