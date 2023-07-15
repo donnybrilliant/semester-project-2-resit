@@ -12,7 +12,7 @@ export function sidebarItemTemplate(data) {
   container.innerHTML = `
   <div class="d-flex w-100 align-items-center justify-content-between">
       <strong class="mb-1"></strong>
-      <small></small>
+      <code><small></small></code>
   </div>
   <div id="excerpt">
   </div>`;

@@ -2,6 +2,7 @@ import { loggedIn } from "../utils/loggedIn.mjs";
 import { read } from "../api/user/read.mjs";
 import * as storage from "../utils/storage.mjs";
 import { setLogoutListener } from "../handlers/logout.mjs";
+import { theme } from "../utils/theme.mjs";
 
 // Split into modules
 export async function renderNav() {
@@ -20,10 +21,14 @@ export async function renderNav() {
           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="https://secure.gravatar.com/avatar/b09f134e71f5fa46ca93481656d83e70?s=48&d=mm&r=g" alt="Avatar" width="32" height="32" class="rounded-circle">
         </button>
-           
-            <ul class="dropdown-menu text-small" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0.5px, 3rem, 0px);">
-              <li><a id="menu-username" class="dropdown-item disabled text-black" href="#">Username</a></li>
+            <ul class="dropdown-menu text-small dropdown-menu-end">
+              <li><span id="menu-username" class="dropdown-item disabled" href="#">Username</span></li>
               <li><hr class="dropdown-divider"></li>
+              <li><span class="form-check form-switch p-1">
+              <input class="form-check-input me-2" type="checkbox" role="switch" id="toggleTheme">
+              <label class="form-check-label" for="toggleTheme" id="themeText">Theme</label>
+            </span></li>
+            <li><hr class="dropdown-divider"></li>
               <li id="logOutButton"><a class="dropdown-item" href="#">Log out</a></li>
             </ul>
           </div>
@@ -31,5 +36,6 @@ export async function renderNav() {
     profile.querySelector("img").src = user.avatar;
     profile.querySelector("#menu-username").innerText = user.user_display_name;
     setLogoutListener();
+    theme();
   }
 }

@@ -1,0 +1,26 @@
+#wrapper {
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-top: 5rem;
+}
+
+.scrollarea {
+    overflow-y: auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+p.excerpt {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.post {
+    margin: 0 auto;
+    max-width: 800px;
+    padding-bottom: 100px;
+}

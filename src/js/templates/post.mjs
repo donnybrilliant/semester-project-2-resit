@@ -3,7 +3,7 @@ import { loggedIn } from "../utils/loggedIn.mjs";
 
 export function postTemplate(data) {
   const container = document.createElement("div");
-  container.classList.add("container", "px-3");
+  container.classList.add("container", "px-3", "post");
   const header = document.createElement("div");
   header.classList.add(
     "d-flex",
@@ -45,9 +45,10 @@ export function postTemplate(data) {
   if (loggedIn()) {
     console.log(h1);
     edit = document.createElement("button");
-    edit.classList.add("btn", "btn-secondary");
+    edit.id = "editButton";
+    edit.classList.add("btn");
     const icon = document.createElement("i");
-    icon.classList.add("bi", "bi-pencil-square");
+    icon.classList.add("bi", "bi-pencil-square", "fs-5");
     edit.append(icon);
     edit.setAttribute("type", "button");
     edit.setAttribute("title", "Edit post");
@@ -58,12 +59,12 @@ export function postTemplate(data) {
   }
 
   const categories = document.createElement("div");
-  categories.classList.add("my-3");
+  categories.classList.add("my-5");
   const categoriesData = data._embedded["wp:term"][0];
   categoriesData.forEach((category) => {
     const categoryPill = document.createElement("span");
     categoryPill.innerText = category.name;
-    categoryPill.classList.add("badge", "bg-secondary", "me-1");
+    categoryPill.classList.add("badge", "bg-primary", "p-2", "me-1");
     categories.append(categoryPill);
   });
 
@@ -71,7 +72,7 @@ export function postTemplate(data) {
   let excerpt = "";
   if (data.excerpt.rendered !== data.content.rendered) {
     excerpt = document.createElement("div");
-    excerpt.classList.add("small");
+    excerpt.classList.add("small", "my-5");
     excerpt.innerHTML = data.excerpt.rendered;
   }
   // should this be something else than a string? html element? but then it renders anyway?
@@ -83,7 +84,7 @@ export function postTemplate(data) {
     img.setAttribute("alt", data._embedded["wp:featuredmedia"][0].alt_text);
   }
   const content = document.createElement("div");
-  content.classList.add("my-5");
+  content.classList.add("mb-5", "content");
   content.innerHTML = data.content.rendered;
   container.append(header, row, categories, excerpt, img, content);
   return container;

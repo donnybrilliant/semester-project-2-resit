@@ -1,0 +1,13 @@
+button:hover,
+.navbar a:hover {
+    transform: scale(1.15);
+}
+
+#editButton:hover,
+#profile>button:hover {
+    transform: scale(1.5);
+}
+
+#loginModal button:hover {
+    transform: scale(1.05);
+}

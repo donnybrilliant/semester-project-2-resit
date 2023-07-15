@@ -1,6 +1,6 @@
 {
   "name": "semester-project-2-resit-donnybrilliant",
-  "version": "0.9.1",
+  "version": "1.0.0",
   "description": "Semester Project 2 Resit at Noroff",
   "type": "module",
   "main": "src/js/index.js",

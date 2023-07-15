@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8" />
@@ -17,16 +17,17 @@
 </head>
 
 <body>
-    <header class="fixed-top">
-        <nav class="navbar bg-white p-3">
+    <header class="fixed-top bg-body">
+        <nav class="navbar p-3">
             <div class="container-fluid">
-                <button id="menuButton" class="btn btn-light" type="button" data-bs-toggle="collapse"
+                <button id="menuButton" class="btn btn-primary" type="button" data-bs-toggle="collapse"
                     data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
                     <i class="bi bi-list"></i>
                 </button>
                 <a class="navbar-brand" href="./index.html"><i class="bi bi-box-fill me-2"></i>Elementarium</a>
                 <div id="profile" class="d-flex">
-                    <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Login</a>
+                    <a href="#" class="text-decoration-none" data-bs-target="#loginModal" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Login</a>
                 </div>
             </div>
         </nav>
@@ -34,59 +35,48 @@
     <div class="d-flex flex-nowrap" id="wrapper">
 
         <div id="sidebar" class="collapse collapse-horizontal col-12 col-md-5 col-xxl-4">
-            <div class="p-3 border-bottom">
+            <div class="p-3 border-bottom search-bar">
                 <form id="searchForm" onSubmit="return false;">
                     <div class="">
                         <input id="search" class="form-control" name="search" type="search" placeholder="Search"
                             aria-label="Search">
                     </div>
-                    <!--    <div class="d-flex">
-                            <select id="sidebarCategories" name="category" class="form-select me-2 categories"
-                                aria-label="Category">
-                                <option value="">All Categories</option>
-                            </select>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-filter-right"></i>
-                                </button>
-                                <ul id="sort" class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="dropdown-item active" href="#" id="new">New to old</a></li>
-                                    <li><a class="dropdown-item" href="#" id="old">Old to new</a></li>
-                                    <li><a class="dropdown-item" href="#" id="asc">A - Z</a></li>
-                                    <li><a class="dropdown-item" href="#" id="desc">Z - A</a></li>
 
-                                </ul>
-                            </div>
-                        </div> -->
                 </form>
             </div>
-            <div id="postList" class="list-group list-group-flush border-bottom scrollarea"></div>
+            <div id="postList" class="list-group list-group-flush scrollarea"></div>
         </div>
 
-        <main class="p-3 scrollarea">
-            <div class="text-center">
+        <main class="p-3 scrollarea container-fluid">
+            <div class="text-center my-5 pb-5 landing-page">
                 <h1>Welcome to Elementarium</h1>
                 <div class="container-fluid my-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor"
-                        class="bi bi-box-fill" viewBox="0 0 16 16">
+                        class="bi bi-box-fill my-5" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.004-.001.274-.11a.75.75 0 0 1 .558 0l.274.11.004.001 6.971 2.789Zm-1.374.527L8 5.962 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339Z" />
                     </svg>
-                </div>
-                <button class="btn btn-primary d-md-none mb-5" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
-                    Open Menu to see posts
-                </button>
 
+                    <p class="excerpt small my-5">Elementarium is a comprehensive resource for everything related to
+                        HTML
+                        elements,
+                        DOM
+                        manipulation,
+                        and
+                        rendering in JavaScript.
+                        <br />Here to provide you with valuable information and examples to enhance your coding skills.
+                    </p>
+
+                    <button class="btn btn-primary d-md-none mb-5" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
+                        Open Menu to see posts
+                    </button>
+
+                </div>
             </div>
-            <div class="container">
-                <p>Elementarium is a comprehensive resource for everything related to HTML elements, DOM manipulation,
-                    and
-                    rendering in JavaScript. Whether you're a beginner or an experienced front-end developer,
-                    Elementarium
-                    is
-                    here to provide you with valuable information and examples to enhance your coding skills.</p>
+
+            <div class="post">
+
 
                 <h2>Unlock the Power of Elements</h2>
 
@@ -95,7 +85,7 @@
                     the DOM, Elementarium covers a wide range of topics. Explore our collection of in-depth posts,
                     tutorials,
                     and code examples to master the art of front-end development.</p>
-
+                <hr class="border border-secondary border-2 opacity-75 my-5">
                 <h3>Discover and Learn</h3>
 
                 Open the sidebar menu to easily navigate through Elementarium's extensive collection of posts. Use the
@@ -104,7 +94,7 @@
                 and techniques. We're constantly updating our content to provide you with the latest information and
                 best
                 practices in front-end development.
-
+                <hr class="border border-secondary border-1 opacity-75 my-5">
                 <h4>Join the Elementarium Community</h4>
 
                 <p>Elementarium is more than just a resource - it's a community of front-end developers passionate about
@@ -113,7 +103,8 @@
                     stay
                     up-to-date with the latest trends and advancements in the world of front-end development.</p>
 
-                <p>Get ready to dive into the world of HTML elements, DOM manipulation, and rendering. Let Elementarium
+                <p class="my-5">Get ready to dive into the world of HTML elements, DOM manipulation, and rendering. Let
+                    Elementarium
                     be
                     your
                     guide to unlock the full potential of front-end development.</p>
@@ -130,7 +121,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="loginForm">
+                    <form id="loginForm" class="m-3">
                         <div class="form-floating my-3">
                             <input type="text" name="username" class="form-control" id="loginUsername"
                                 placeholder="Username" required title="Must be a valid username.">
@@ -154,7 +145,7 @@
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="newPostModalLabel">Create new
+                    <h1 class="modal-title" id="newPostModalLabel">Create new
                         post
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -170,12 +161,15 @@
                                 placeholder="Post Excerpt">
                         </div>
                         <div class="mb-3">
-                            <small>In this form you can write semantic HTML elements. You can use element
-                                like p, small
-                                or code.
-                                Images can be added from anywhere on the web by using the img tag and an url. You can
+                            <div class="small">In this form you can write semantic <code>HTML</code> elements. You can
+                                use element
+                                like <code>p</code>, <code>pre</code>
+                                or <code>code</code>. Use the <code>pre</code> tag for code blocks and <code>code</code>
+                                for tags.
+                                Images can be added from anywhere on the web by using the <code>img</code> tag and an
+                                url. You can
                                 also use the image upload feature below.
-                            </small>
+                            </div>
                             <textarea class="form-control" name="content" placeholder="Content" id="newPostTextArea"
                                 rows="10" title="Content of your post" required></textarea>
                         </div>
@@ -223,7 +217,7 @@
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="updatePostModalLabel">Update
+                    <h1 class="modal-title" id="updatePostModalLabel">Update
                         post
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -239,12 +233,15 @@
                                 placeholder="Post Excerpt">
                         </div>
                         <div class="mb-3">
-                            <small>In this form you can write semantic HTML elements. You can use element
-                                like p, small
-                                or code.
-                                Images can be added from anywhere on the web by using the img tag and an url. You can
+                            <div class="small">In this form you can write semantic <code>HTML</code> elements. You can
+                                use element
+                                like <code>p</code>, <code>pre</code>
+                                or <code>code</code>. Use the <code>pre</code> tag for code blocks and <code>code</code>
+                                for tags.
+                                Images can be added from anywhere on the web by using the <code>img</code> tag and an
+                                url. You can
                                 also use the image upload feature below.
-                            </small>
+                            </div>
                             <textarea class="form-control" name="content" placeholder="Content" id="updatePostTextArea"
                                 rows="10" title="Content of your post" required></textarea>
                         </div>

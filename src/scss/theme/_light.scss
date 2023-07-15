@@ -1,0 +1,21 @@
+[data-bs-theme="light"] {
+    .btn-primary:hover {
+        color: $dark-color;
+    }
+
+    #profile>*:hover {
+        color: var(--bs-primary);
+    }
+
+    #sidebar {
+        border-right: 1px solid $dark-color;
+    }
+
+    .search-bar {
+        border-bottom: 1px solid $dark-color !important;
+    }
+
+    .navbar {
+        border-bottom: 1px solid $dark-color;
+    }
+}

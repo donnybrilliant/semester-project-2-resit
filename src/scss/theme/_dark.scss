@@ -1,0 +1,88 @@
+@include color-mode(dark) {
+  .btn-primary {
+    background-color: $primary-color;
+    color: $dark-color;
+    border-color: $primary-color;
+  }
+
+  .btn-primary:hover {
+    background-color: $secondary-color;
+    color: $dark-color;
+    border-color: $secondary-color;
+  }
+
+  .bg-primary {
+    background-color: $primary-color !important;
+    color: $dark-color;
+  }
+
+  #editButton {
+    color: $secondary-color;
+  }
+
+  #profile>*:hover {
+    color: $primary-color !important;
+  }
+
+  .form-check-input:checked {
+    background-color: $primary-color;
+  }
+
+  pre {
+    color: #fff;
+    border-color: #fff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  .navbar-brand {
+    font-family: "VT323", monospace;
+    color: $primary-color;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .navbar-brand {
+    font-size: 2rem;
+  }
+
+  strong {
+    font-size: 1.5rem;
+  }
+
+  p.excerpt {
+    color: $secondary-color;
+  }
+
+  .disabled {
+    color: $danger-color !important;
+  }
+
+  .alert-success {
+    background-color: $primary-color;
+    color: $dark-color;
+  }
+
+  .alert-danger {
+    background-color: $danger-color;
+    color: $dark-color;
+  }
+
+  .navbar-brand:hover {
+    color: $secondary-color;
+  }
+
+  @media screen and (max-width: 500px) {
+    .navbar-brand {
+      font-size: 1.5rem !important;
+
+    }
+  }
+}

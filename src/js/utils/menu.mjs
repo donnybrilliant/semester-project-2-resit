@@ -10,9 +10,13 @@ function checkButtonState() {
 
   if (visibility === "true") {
     menuButton.innerHTML = `<i class="bi bi-x-lg"></i>`;
+    menuButton.classList.remove("btn-primary");
+    menuButton.classList.add("btn-secondary");
     document.querySelector("#sidebar").classList.add("d-flex", "flex-column");
   } else {
     menuButton.innerHTML = `<i class="bi bi-list"></i>`;
+    menuButton.classList.remove("btn-secondary");
+    menuButton.classList.add("btn-primary");
     document
       .querySelector("#sidebar")
       .classList.remove("d-flex", "flex-column");
@@ -44,6 +48,6 @@ function showSideBarOnResize() {
 
 export function setUpMenu() {
   showSidebarOnMedium();
-  showSideBarOnResize();
+  //showSideBarOnResize();
   setMenuButtonListener();
 }
