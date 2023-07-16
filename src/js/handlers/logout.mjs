@@ -9,7 +9,7 @@ export function setLogoutListener() {
       event.preventDefault();
       remove("token");
       remove("user");
-      location.assign("./");
+      window.location.assign("./");
     });
   }
 }
