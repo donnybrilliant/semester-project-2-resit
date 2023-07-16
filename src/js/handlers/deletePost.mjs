@@ -12,7 +12,6 @@ export async function deletePostHandler(event, id) {
     renderResponseMessage("Post deleted successfully.", container, "success");
     setTimeout(() => location.replace("/"), 1200);
   } catch (error) {
-    console.log(error);
     renderResponseMessage(error.message, container, "danger");
   }
 }

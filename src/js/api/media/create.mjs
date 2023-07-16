@@ -1,8 +1,7 @@
 import { URL } from "../constants.mjs";
-//import { authFetch } from "../authFetch.mjs";
 import { load } from "../../utils/storage.mjs";
 
-export async function create(data /*, filename */) {
+export async function create(data) {
   if (!data) {
     throw new Error("Create post requires a data object");
   }
@@ -14,7 +13,6 @@ export async function create(data /*, filename */) {
     method,
     body: data,
     headers: {
-      //"Content-Disposition": `attachment; filename=${filename}`,
       Authorization: `Bearer ${token}`,
     },
   });

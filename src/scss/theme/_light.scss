@@ -7,15 +7,9 @@
         color: var(--bs-primary);
     }
 
-    #sidebar {
-        border-right: 1px solid $dark-color;
-    }
-
-    .search-bar {
-        border-bottom: 1px solid $dark-color !important;
-    }
-
-    .navbar {
-        border-bottom: 1px solid $dark-color;
+    @media screen and (max-width: 320px) {
+        .landing-page h1 {
+            font-size: 2rem !important;
+        }
     }
 }

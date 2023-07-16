@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <header class="fixed-top bg-body">
+    <header class="sticky-top bg-body">
         <nav class="navbar p-3">
             <div class="container-fluid">
                 <button id="menuButton" class="btn btn-primary" type="button" data-bs-toggle="collapse"
@@ -133,14 +133,15 @@
                             <label for="loginPassword">Password</label>
                         </div>
                         <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+                        <div id="loginResponse"></div>
                     </form>
-                    <div id="loginResponse">
-                    </div>
-                </div>
 
+                </div>
             </div>
+
         </div>
     </div>
+
     <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">

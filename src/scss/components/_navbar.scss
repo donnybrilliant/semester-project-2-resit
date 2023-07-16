@@ -8,3 +8,10 @@
         display: none;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .navbar-brand {
+        font-size: 1.7rem !important;
+        padding-bottom: 0;
+    }
+}

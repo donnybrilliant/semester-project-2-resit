@@ -2,16 +2,11 @@ import { read } from "../api/posts/read.mjs";
 import { remove } from "../api/posts/delete.mjs";
 import { updatePostHandler } from "../handlers/updatePost.mjs";
 
-export async function setUpdatePostListener() {
+export async function setUpdatePostListener(post) {
   const form = document.querySelector("#updatePostForm");
-  const url = new URL(location.href);
-  const id = url.searchParams.get("id");
 
-  if (form && id) {
-    const submitButton = form.querySelector("button[type='submit']");
-    const deleteButton = form.querySelector("button#deleteButton");
-
-    const data = await read(id);
+  if (form && post) {
+    const data = post;
 
     //Place this somewhere else with delete-stuff?
     document.querySelector(
@@ -28,6 +23,6 @@ export async function setUpdatePostListener() {
   }
 
   form.addEventListener("submit", (event) => {
-    updatePostHandler(event, id);
+    updatePostHandler(event, post.id);
   });
 }

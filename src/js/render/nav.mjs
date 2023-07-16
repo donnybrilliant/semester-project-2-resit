@@ -17,7 +17,7 @@ export async function renderNav() {
         data-bs-toggle="modal" data-bs-dismiss="modal" title="Add new post">
         <i class="bi bi-plus-circle"></i>
       </button>
-      <div class="dropdown">
+      <div class="dropdown author">
           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="https://secure.gravatar.com/avatar/b09f134e71f5fa46ca93481656d83e70?s=48&d=mm&r=g" alt="Avatar" width="32" height="32" class="rounded-circle">
         </button>

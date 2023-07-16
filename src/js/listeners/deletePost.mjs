@@ -1,10 +1,7 @@
 import { deletePostHandler } from "../handlers/deletePost.mjs";
 
-export async function setDeletePostListener() {
+export async function setDeletePostListener(id) {
   const deleteButton = document.querySelector("button#confirmDeleteButton");
-
-  const url = new URL(location.href);
-  const id = url.searchParams.get("id");
 
   if (id && deleteButton) {
     deleteButton.addEventListener("click", (event) => {
