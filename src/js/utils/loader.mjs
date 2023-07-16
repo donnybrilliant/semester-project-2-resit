@@ -1,3 +1,4 @@
+// Loader/spinner component
 export function loader() {
   return `
     <div class="d-flex justify-content-center my-4 pb-2">

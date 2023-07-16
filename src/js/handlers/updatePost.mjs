@@ -4,6 +4,7 @@ import { loader } from "../utils/loader.mjs";
 import { checkForm } from "../utils/checkForm.mjs";
 import { createMedia } from "./media.mjs";
 
+// Handles the update post form submission
 export async function updatePostHandler(event, id) {
   event.preventDefault();
   const form = event.target;

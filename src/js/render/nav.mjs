@@ -4,7 +4,8 @@ import * as storage from "../utils/storage.mjs";
 import { setLogoutListener } from "../handlers/logout.mjs";
 import { theme } from "../utils/theme.mjs";
 
-// Split into modules
+// Renders the navigation bar with the user's avatar and username if logged in
+// Sets up the logout listener and theme listener
 export async function renderNav() {
   if (loggedIn()) {
     const user = storage.load("user");

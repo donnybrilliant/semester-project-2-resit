@@ -1,3 +1,4 @@
+// Support function to check if the form is valid
 export function checkForm(post) {
   if (post.excerpt == "") {
     delete post.excerpt;

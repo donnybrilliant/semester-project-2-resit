@@ -1,5 +1,6 @@
 import { URL } from "../constants.mjs";
 
+// API Call: Reads all posts
 export async function readAll() {
   const readPostsURL = URL + "/wp/v2/posts?_embed&per_page=100";
   const response = await fetch(readPostsURL);
@@ -15,6 +16,7 @@ export async function readAll() {
   }
 }
 
+// API Call: Reads a single post
 export async function read(id) {
   if (!id) {
     throw new Error("Requires a post ID");

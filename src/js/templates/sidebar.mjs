@@ -2,6 +2,7 @@ import { dateConverter } from "../utils/date.mjs";
 import { renderResponseMessage } from "../utils/response.mjs";
 import { createExcerptContainer } from "./sidebar/excerpt.mjs";
 
+// Creates a sidebar item
 function sidebarItemTemplate(data) {
   const container = document.createElement("a");
   container.classList.add(
@@ -32,6 +33,7 @@ function sidebarItemTemplate(data) {
   return container;
 }
 
+// Renders the sidebar items
 export function renderSidebarItems(dataList, parent) {
   parent.innerHTML = "";
   if (dataList.length === 0)

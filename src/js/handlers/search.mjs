@@ -1,5 +1,6 @@
 import { renderSidebarItems } from "../templates/sidebar.mjs";
 
+// Filters posts based on the search term
 function filterPosts(posts, term) {
   return posts.filter((post) => {
     const title = post.title.rendered.toLowerCase();
@@ -16,6 +17,7 @@ function filterPosts(posts, term) {
   });
 }
 
+// Handles the search input and renders the filtered posts
 export function searchHandler(posts, container, event) {
   event.preventDefault();
   const term = event.target.value.toLowerCase();

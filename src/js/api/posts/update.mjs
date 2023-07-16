@@ -1,6 +1,7 @@
 import { URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
+// API Call: Updates a post
 export async function update(data) {
   if (!data) {
     throw new Error("Update post requires a data object");

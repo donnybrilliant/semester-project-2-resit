@@ -1,5 +1,6 @@
 import { URL } from "../constants.mjs";
 
+// API Call: Reads all categories
 export async function read() {
   const readCategoryURL = URL + "/wp/v2/categories";
   const response = await fetch(readCategoryURL);

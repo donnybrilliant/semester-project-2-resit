@@ -6,6 +6,7 @@ import { setUpdatePostListener } from "../listeners/updatePost.mjs";
 import { setDeletePostListener } from "../listeners/deletePost.mjs";
 import { loggedIn } from "../utils/loggedIn.mjs";
 
+// Fetches a single post and renders it
 export async function renderPost(id) {
   const container = document.querySelector("main");
   try {

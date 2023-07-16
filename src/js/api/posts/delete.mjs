@@ -1,6 +1,7 @@
 import { URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
+// API Call: Deletes a post
 export async function remove(id) {
   if (!id) {
     throw new Error("Deleting a post requires an ID");

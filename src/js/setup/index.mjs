@@ -7,6 +7,7 @@ import { loggedIn } from "../utils/loggedIn.mjs";
 import { renderCategories } from "../render/categories.mjs";
 import { setUpMenu } from "../utils/menu.mjs";
 
+// Sets up the app, does some simple routing
 export async function setup() {
   setUpMenu();
   renderSidebar();

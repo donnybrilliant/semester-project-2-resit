@@ -3,6 +3,7 @@ import { setSearchListener } from "../listeners/search.mjs";
 import { renderSidebarItems } from "../templates/sidebar.mjs";
 import { loader } from "../utils/loader.mjs";
 
+// Fetches all posts and renders them in the sidebar and sets the search listener
 export async function renderSidebar() {
   const container = document.querySelector("#postList");
 

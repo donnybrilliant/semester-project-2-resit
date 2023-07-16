@@ -2,6 +2,7 @@ import { remove } from "../api/posts/delete.mjs";
 import { renderResponseMessage } from "../utils/response.mjs";
 import { loader } from "../utils/loader.mjs";
 
+// Handles the delete post form submission
 export async function deletePostHandler(event, id) {
   event.preventDefault();
   const container = document.querySelector("#deletePostModal .modal-body");

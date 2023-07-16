@@ -1,6 +1,6 @@
 import { load } from "../utils/storage.mjs";
 
-//do i need to export this?
+// Returns the headers for an authenticated request
 export function headers() {
   const token = load("token");
   return {
@@ -9,6 +9,7 @@ export function headers() {
   };
 }
 
+// Makes an authenticated request
 export async function authFetch(url, options = {}) {
   return fetch(url, {
     ...options,

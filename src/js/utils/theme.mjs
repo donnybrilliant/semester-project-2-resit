@@ -1,3 +1,4 @@
+// Creates a theme toggle button
 export function theme() {
   const toggleButton = document.querySelector("#toggleTheme");
 

@@ -1,6 +1,7 @@
 import { URL } from "../constants.mjs";
 import { load } from "../../utils/storage.mjs";
 
+// API Call: Creates a new image in the media library
 export async function create(data) {
   if (!data) {
     throw new Error("Create post requires a data object");

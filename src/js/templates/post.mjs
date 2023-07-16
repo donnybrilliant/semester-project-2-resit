@@ -6,6 +6,7 @@ import { createExcerptSection } from "./post/excerpt.mjs";
 import { createImageSection } from "./post/media.mjs";
 import { createContentSection } from "./post/content.mjs";
 
+// Creates the post template
 function postTemplate(data) {
   const container = document.createElement("div");
   container.classList.add("container", "px-3", "post");
@@ -41,6 +42,7 @@ function postTemplate(data) {
   return container;
 }
 
+// Renders the post template
 export function renderPostTemplate(data, parent) {
   document.title = data.title.rendered + " | Elementarium";
   parent.innerHTML = "";

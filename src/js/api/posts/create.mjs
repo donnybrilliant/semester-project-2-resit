@@ -1,6 +1,7 @@
 import { URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
+// API Call: Creates a new post
 export async function create(data) {
   if (!data) {
     throw new Error("Create post requires a data object");

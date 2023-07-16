@@ -3,6 +3,7 @@ import { renderResponseMessage } from "../utils/response.mjs";
 import * as storage from "../utils/storage.mjs";
 import { loader } from "../utils/loader.mjs";
 
+// Handles the login form submission and saves the token and user info
 export async function loginHandler(event) {
   event.preventDefault();
   const form = event.target;

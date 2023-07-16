@@ -1,7 +1,7 @@
 import { read } from "../api/categories/read.mjs";
 
+// Renders all categories in the select elements
 export async function renderCategories() {
-  // This renders the categories in the sidebar and modals
   const categoriesContainers = document.querySelectorAll(".categories");
   if (categoriesContainers.length > 0) {
     const categories = await read();

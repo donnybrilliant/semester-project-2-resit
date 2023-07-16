@@ -4,6 +4,8 @@ import { loader } from "../utils/loader.mjs";
 import { checkForm } from "../utils/checkForm.mjs";
 import { createMedia } from "./media.mjs";
 
+// Handles the create post form submission
+// Uploads the media first, then creates the post
 export async function createPostHandler(event) {
   event.preventDefault();
   const form = event.target;

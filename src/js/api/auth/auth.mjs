@@ -1,5 +1,6 @@
 import { URL } from "../constants.mjs";
 
+// API Call: Logs in a user and returns the token
 export async function login(user) {
   const loginURL = URL + "/jwt-auth/v1/token";
   const method = "post";
