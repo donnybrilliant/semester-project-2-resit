@@ -10,7 +10,7 @@ export async function deletePostHandler(event, id) {
     container.innerHTML = loader();
     await remove(id);
     renderResponseMessage("Post deleted successfully.", container, "success");
-    setTimeout(() => location.replace("/"), 1200);
+    setTimeout(() => location.assign("/"), 1200);
   } catch (error) {
     renderResponseMessage(error.message, container, "danger");
   }
